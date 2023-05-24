@@ -25,7 +25,7 @@ SOFTWARE.
 import { Environment, HTTPError } from "../..";
 
 export const onRequestGet: PagesFunction<Environment> = async ({ params, env }) => {
-  const content = await env.STORAGE.get(`documents:${params.id}, { cacheTtl: 604800 }`);
+  const content = await env.STORAGE.get(`documents:${params.id}`);
 
   if (content) {
     const headers = {
